@@ -2113,6 +2113,25 @@ body {
     .clients-gradient-overlay {
         width: 100px;
     }
+
+    .experts-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .experts-image-wrapper {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .experts-content {
+        text-align: left;
+    }
+
+    .experts-cta {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2143,6 +2162,14 @@ body {
     
     .stat-number {
         font-size: 2rem;
+    }
+
+    .experts-section {
+        padding: 5rem 0;
+    }
+
+    .experts-title {
+        font-size: 1.8rem;
     }
 }
 
