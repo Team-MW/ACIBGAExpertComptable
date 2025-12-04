@@ -332,14 +332,8 @@ if (refuseCookies) {
     });
 }
 
-// Parallax Effect for Hero Section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero && scrolled < window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
+// Parallax Effect for Hero Section (désactivé pour plus de fluidité au scroll)
+// Si tu veux le réactiver plus tard, remets simplement le listener de scroll.
 
 // Cursor Effect (Optional - adds a custom cursor)
 const cursor = document.createElement('div');
