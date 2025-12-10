@@ -1611,6 +1611,13 @@ body {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 }
 
+/* Ensure embedded Tally form scales properly */
+.contact-form iframe {
+    width: 100%;
+    min-height: 600px;
+    border: 0;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;

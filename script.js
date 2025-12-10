@@ -281,28 +281,30 @@ portfolioItems.forEach(item => {
     });
 });
 
-// Form Submission
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const message = formData.get('message');
-        
-        // Simple validation
-        if (name && email && message) {
-            // Show success message (you can replace this with actual form submission)
-            alert('Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.');
-            contactForm.reset();
-        } else {
-            alert('Veuillez remplir tous les champs.');
-        }
-    });
-}
+// Contact: Replace native form with Tally embed if present
+(() => {
+    const el = document.querySelector('.contact-form');
+    if (!el) return;
+
+    // If it's already a div (already replaced), do nothing
+    if (el.tagName === 'DIV') return;
+
+    // If it's a FORM, replace it with a styled div containing the Tally iframe
+    if (el.tagName === 'FORM') {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'contact-form';
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://tally.so/r/xXr485?transparentBackground=1&hideTitle=1';
+        iframe.width = '100%';
+        iframe.height = '600';
+        iframe.frameBorder = '0';
+        iframe.marginHeight = '0';
+        iframe.marginWidth = '0';
+        iframe.title = 'Contact';
+        wrapper.appendChild(iframe);
+        el.replaceWith(wrapper);
+    }
+})();
 
 // Cookie Banner
 const cookieBanner = document.getElementById('cookieBanner');
